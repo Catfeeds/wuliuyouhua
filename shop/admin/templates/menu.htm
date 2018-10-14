@@ -15,11 +15,12 @@ var helpLang = "{$help_lang}";
 
 </head>
 <body>
-<div id="tabbar-div">
+<div id="tabbar-div" style="min-width: 174px;">
 <p><span style="float:right; padding: 4px 5px;" ><a href="javascript:toggleCollapse();"><img id="toggleImg" src="images/menu_minus.gif" width="9" height="9" border="0" alt="{$lang.collapse_all}" /></a></span>
   <span class="tab-front" id="menu-tab"><a name="menu-tab" href="javascript:setMenu('menu-ul');">{$lang.menu}</a></span>
   <span class="tab-front" id="menu-tab-engrave"><a name="menu-tab-engrave" href="javascript:setMenu('munu-ul-engrave');">{$lang.engrave_menu}</a></span>
   <span class="tab-front" id="menu-tab-engrave-member"><a name="menu-tab-engrave-member" href="javascript:setMenu('munu-ul-engrave-member');">{$lang.engrave_member}</a></span>
+  <span class="tab-front" id="menu-tab-engrave-youhua"><a name="menu-tab-engrave-youhua" href="javascript:setMenu('munu-ul-engrave-youhua');">{$lang.engrave_youhua}</a></span>
 </p>
 </div>
 <div id="main-div">
@@ -78,6 +79,24 @@ var helpLang = "{$help_lang}";
 {/if}
 {/foreach}
 </ul>
+  <ul id="munu-ul-engrave-youhua" style="display:none">
+    {foreach from=$engrave_youhua_menus item=menu key=k}
+    {if $menu.action}
+    <li class="explode"><a href="{$menu.action}" target="main-frame">{$menu.label}</a></li>
+    {else}
+    <li class="explode" key="{$k}" name="menu">
+      {$menu.label}
+      {if $menu.children}
+      <ul>
+        {foreach from=$menu.children item=child}
+        <li class="menu-item"><a href="{$child.action}" target="main-frame">{$child.label}</a></li>
+        {/foreach}
+      </ul>
+      {/if}
+    </li>
+    {/if}
+    {/foreach}
+  </ul>
 </div>
 <div id="help-div" style="display:none">
 <h1 id="help-title"></h1>
