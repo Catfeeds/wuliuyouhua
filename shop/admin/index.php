@@ -251,10 +251,67 @@ elseif ($_REQUEST['act'] == 'menu')
     	}
     }
     //////////////////////////////////物流转运：左侧会员菜单///////////////////////////////
+
+    //////////////////////////////////物流优化菜单///////////////////////////////
+    foreach ($engrave_youhua_modules AS $key => $value)
+    {
+        ksort($engrave_youhua_modules[$key]);
+    }
+    ksort($engrave_youhua_modules);
+
+    foreach ($engrave_youhua_modules AS $key => $val)
+    {
+        $engrave_youhua_menus[$key]['label'] = $_LANG[$key];
+        if (is_array($val))
+        {
+            foreach ($val AS $k => $v)
+            {
+                if ( isset($purview[$k]))
+                {
+                    if (is_array($purview[$k]))
+                    {
+                        $boole = false;
+                        foreach ($purview[$k] as $action)
+                        {
+                            $boole = $boole || admin_priv($action, '', false);
+                        }
+                        if (!$boole)
+                        {
+                            continue;
+                        }
+                    }
+                    else
+                    {
+                        if (! admin_priv($purview[$k], '', false))
+                        {
+                            continue;
+                        }
+                    }
+                }
+                if ($k == 'ucenter_setup' && $_CFG['integrate_code'] != 'ucenter')
+                {
+                    continue;
+                }
+                $engrave_youhua_menus[$key]['children'][$k]['label']  = $_LANG[$k];
+                $engrave_youhua_menus[$key]['children'][$k]['action'] = $v;
+            }
+        }
+        else
+        {
+            $engrave_youhua_menus[$key]['action'] = $val;
+        }
+        // 如果children的子元素长度为0则删除该组
+        if(empty($engrave_youhua_menus[$key]['children']))
+        {
+            unset($engrave_youhua_menus[$key]);
+        }
+    }
+    //////////////////////////////////物流转运：左侧会员菜单///////////////////////////////
     
     $smarty->assign('menus',     $menus);
     $smarty->assign('engrave_menus',     $engrave_menus);
     $smarty->assign('engrave_member_menus',     $engrave_member_menus);
+    $smarty->assign('engrave_youhua_menus',     $engrave_youhua_menus);
     $smarty->assign('no_help',   $_LANG['no_help']);
     $smarty->assign('help_lang', $_CFG['lang']);
     $smarty->assign('charset', EC_CHARSET);

@@ -15,8 +15,14 @@ var helpLang = "<?php echo $this->_var['help_lang']; ?>";
 
 </head>
 <body>
+<<<<<<< HEAD
 <div id="tabbar-div" style="min-width: 174px;">
 <p><span style="float:right; padding: 4px 5px;" ><a href="javascript:toggleCollapse();"><img id="toggleImg" src="images/menu_minus.gif" width="9" height="9" border="0" alt="<?php echo $this->_var['lang']['collapse_all']; ?>" /></a></span>
+=======
+<div id="tabbar-div" style="min-width:174px;">
+<p>
+  <span style="float:right; padding: 4px 5px;" ><a href="javascript:toggleCollapse();"><img id="toggleImg" src="images/menu_minus.gif" width="9" height="9" border="0" alt="<?php echo $this->_var['lang']['collapse_all']; ?>" /></a></span>
+>>>>>>> 4247bc962dd6bfcb2b1ac85d85702295ab6e4a6e
   <span class="tab-front" id="menu-tab"><a name="menu-tab" href="javascript:setMenu('menu-ul');"><?php echo $this->_var['lang']['menu']; ?></a></span>
   <span class="tab-front" id="menu-tab-engrave"><a name="menu-tab-engrave" href="javascript:setMenu('munu-ul-engrave');"><?php echo $this->_var['lang']['engrave_menu']; ?></a></span>
   <span class="tab-front" id="menu-tab-engrave-member"><a name="menu-tab-engrave-member" href="javascript:setMenu('munu-ul-engrave-member');"><?php echo $this->_var['lang']['engrave_member']; ?></a></span>
@@ -91,6 +97,7 @@ var helpLang = "<?php echo $this->_var['help_lang']; ?>";
   <?php endif; ?>
   <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
 </ul>
+<<<<<<< HEAD
   <ul id="munu-ul-engrave-youhua" style="display:none">
     <?php $_from = $this->_var['engrave_member_menus']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('k', 'menu');if (count($_from)):
     foreach ($_from AS $this->_var['k'] => $this->_var['menu']):
@@ -113,6 +120,30 @@ var helpLang = "<?php echo $this->_var['help_lang']; ?>";
     <?php endif; ?>
     <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
   </ul>
+=======
+<ul id="munu-ul-engrave-youhua" style="display:none">
+    <?php $_from = $this->_var['engrave_youhua_menus']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('k', 'menu');if (count($_from)):
+        foreach ($_from AS $this->_var['k'] => $this->_var['menu']):
+            ?>
+            <?php if ($this->_var['menu']['action']): ?>
+            <li class="explode"><a href="<?php echo $this->_var['menu']['action']; ?>" target="main-frame"><?php echo $this->_var['menu']['label']; ?></a></li>
+        <?php else: ?>
+            <li class="explode" key="<?php echo $this->_var['k']; ?>" name="menu">
+                <?php echo $this->_var['menu']['label']; ?>
+                <?php if ($this->_var['menu']['children']): ?>
+                    <ul>
+                        <?php $_from = $this->_var['menu']['children']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'child');if (count($_from)):
+                            foreach ($_from AS $this->_var['child']):
+                                ?>
+                                <li class="menu-item"><a href="<?php echo $this->_var['child']['action']; ?>" target="main-frame"><?php echo $this->_var['child']['label']; ?></a></li>
+                            <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+                    </ul>
+                <?php endif; ?>
+            </li>
+        <?php endif; ?>
+        <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+</ul>
+>>>>>>> 4247bc962dd6bfcb2b1ac85d85702295ab6e4a6e
 </div>
 <div id="help-div" style="display:none">
 <h1 id="help-title"></h1>
