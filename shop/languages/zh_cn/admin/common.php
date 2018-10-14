@@ -565,3 +565,9 @@ $_LANG['08_user_address_manage'] = '收货人地址管理';
 //////////////////////////////////////////////////////////////////////////////////////////////////
 $_LANG['continue_add'] = '继续添加';
 $_LANG['record_have_existed'] = '记录已经存在';
+
+$_LANG['youhua_cost'] = '成本';
+$_LANG['01_youhua_cost'] = '优化测试';
+
+$_LANG['youhua_price'] = '价格';
+$_LANG['01_youhua_price'] = '价格测试';

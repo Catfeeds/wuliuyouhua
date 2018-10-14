@@ -34,17 +34,26 @@ function setMenu(name){
 		document.getElementById('munu-ul-engrave').style.display = "none";
 		document.getElementById('munu-ul-engrave-member').style.display = "none";
 		document.getElementById('menu-ul').style.display = "block";
+		document.getElementById('munu-ul-engrave-youhua').style.display = "none";
 	}
 	else if(name=='munu-ul-engrave'){
 		document.getElementById('munu-ul-engrave').style.display = "block";
 		document.getElementById('munu-ul-engrave-member').style.display = "none";
 		document.getElementById('menu-ul').style.display = "none";
+        document.getElementById('munu-ul-engrave-youhua').style.display = "none";
 	} 
-	else{
+	else if (name=='munu-ul-engrave-member') {
 		document.getElementById('munu-ul-engrave').style.display = "none";
 		document.getElementById('munu-ul-engrave-member').style.display = "block";
 		document.getElementById('menu-ul').style.display = "none";
+        document.getElementById('munu-ul-engrave-youhua').style.display = "none";
 	}
+	else {
+        document.getElementById('munu-ul-engrave').style.display = "none";
+        document.getElementById('munu-ul-engrave-member').style.display = "none";
+        document.getElementById('menu-ul').style.display = "none";
+        document.getElementById('munu-ul-engrave-youhua').style.display = "block";
+    }
 }
 
 function toggleCollapseExpand(obj, status)

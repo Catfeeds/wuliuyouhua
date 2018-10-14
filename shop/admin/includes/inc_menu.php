@@ -325,4 +325,7 @@ $engrave_member_modules['13_backup']['convert']                    = 'convert.ph
 //会员
 //
 //////////////////////////////////////////////////////////////////////////////////////////////////
+//物流优化
+$engrave_youhua_modules['youhua_cost']['01_youhua_cost'] = 'test.php?act=1';
+$engrave_youhua_modules['youhua_price']['01_youhua_price'] = 'test.php?act=1';
 ?>
