@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2018-09-11 20:40:36
+<?php /* Smarty version 2.6.26, created on 2018-10-21 10:29:40
          compiled from member_menu.htm */ ?>
 <?php echo '
 <script type="text/javascript">
@@ -154,6 +154,43 @@ $(function(){
 
 		  </ul>
         </div>
+        
+        <div class="vtitle">
+				<div class="vtitle_img"><img src="themes/default/images/rbhm/left_07.png" border="0" /></div>
+				<div class="vtitle_txt"><?php echo $this->_tpl_vars['menu29']; ?>
+</div>
+				<div id="clear"></div>
+	    </div>
+        <div class="vcon" >
+		  <ul class="vconlist clearfix">
+		    <li>
+               <a href="ouxian_base_set.php" <?php if ($this->_tpl_vars['aacct'] == 'member_submit'): ?>class="select"<?php endif; ?>>
+                  <div class="vconlist_left"><?php echo $this->_tpl_vars['menu30']; ?>
+</div>
+                  <div class="vconlist_right"><img src="themes/default/images/rbhm/left_05.png" border="0" /></div>
+                  <div id="clear"></div>
+               </a>
+            </li>
+		    <li>
+               <a href="ouxian_base_data.php" >
+                  <div class="vconlist_left"><?php echo $this->_tpl_vars['menu31']; ?>
+</div>
+                  <div class="vconlist_right"><img src="themes/default/images/rbhm/left_05.png" border="0" /></div>
+                  <div id="clear"></div>
+               </a>
+            </li>
+              <li>
+               <a href="ouxian_zhuanyun.php" >
+                  <div class="vconlist_left"><?php echo $this->_tpl_vars['menu32']; ?>
+</div>
+                  <div class="vconlist_right"><img src="themes/default/images/rbhm/left_05.png" border="0" /></div>
+                  <div id="clear"></div>
+               </a>
+            </li>
+
+		  </ul>
+        </div>
+        
 
         <!--<div class="vtitle">-->
 				<!--<div class="vtitle_img"><img src="themes/default/images/rbhm/left_08.png" border="0" /></div>-->

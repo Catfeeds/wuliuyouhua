@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2018-09-11 20:40:13
+<?php /* Smarty version 2.6.26, created on 2018-10-21 08:11:56
          compiled from comm_message.htm */ ?>
 <!DOCTYPE html>
 <html>
